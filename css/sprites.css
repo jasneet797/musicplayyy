@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#home{
+    background: url(https://www.w3schools.com/css/img_navsprites.gif) 0 0;
+    height:46px;
+    width:44px;
+}
+#prev{
+    background: url(https://www.w3schools.com/css/img_navsprites.gif) 43px 0;
+    height:46px;
+    width:44px;
+    left:48px;
+}
+#next{
+    background: url(https://www.w3schools.com/css/img_navsprites.gif) -47px 0;
+    height:46px;
+    width:44px;
+    left:96px;
+}
+.nav{
+    position:relative;
+}
+.nav ul{
+    list-style-type:none;
+}
+.nav ul li{
+    position:absolute;
+}
+#home a:hover {
+    background: url('https://www.w3schools.com/css/img_navsprites.gif') 0 -45px;
+    cursor:pointer;
+  }
+  
+  #prev a:hover {
+    background: url('https://www.w3schools.com/css/img_navsprites.gif') -48px -45px;
+  }
+  
+  #next a:hover {
+    background: url('https://www.w3schools.com/css/img_navsprites.gif') -96px -45px;
+  }

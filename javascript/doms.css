@@ -1,0 +1,14 @@
+.box{
+    height:50px;
+    width:50px;
+    border:2px solid black;
+    margin:5px;
+    z-index:2;
+}
+.blue{
+    background-color: blue;
+    /* color:red; */
+}
+.yellow{
+    background-color:aquamarine !important;
+}

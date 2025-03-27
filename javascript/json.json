@@ -1,0 +1,10 @@
+{
+    "name":"jasneet",
+    "age":22,
+    "isStudent":true,
+    "skills":["HTML","CSS","Javascript"],
+    "address":{
+        "city":"Mohali",
+        "country":"India"
+    }
+}

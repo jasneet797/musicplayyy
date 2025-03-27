@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Music Player</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        input[type="range"] {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" src="water.mp3"></audio>
+    <br><br>
+    <button onclick="playPause()">Play/Pause</button>
+    <br><br>
+    <input type="range" id="range" min="0" value="0" >
+    <script>
+        let audio = document.getElementById("audio");
+        let rangeBar = document.getElementById("range");
+      rangeBar.max=audio.duration;
+        // audio.addEventListener("timeupdate", function() {
+        //     rangeBar.max = audio.duration;
+        //     rangeBar.value = audio.currentTime;
+        // });
+
+        // let range=rangeBar.value;
+        // range=100;
+// rangeBar.value=100;
+
+
+
+        // for(rangeBar.value=0;rangeBar.value<rangeBar.max;rangeBar.value++){
+        //     rangeBar.value++;
+        // }
+
+        rangeBar.addEventListener("input", function() {
+            audio.currentTime = parseInt(rangeBar.value);
+        });
+
+        function playPause() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+        let interval=setInterval(() => {
+            if(rangeBar.value<rangeBar.max){
+                rangeBar.value++;
+            }
+            else{
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

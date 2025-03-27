@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="doms.css">
+</head>
+<script>
+console.log(document.body);
+document.title="practice";
+console.log(typeof(document));
+console.log(typeof(window));
+un.insertAdjacentHTML("AfterEnd","hey there")
+</script>
+<body>
+
+    <div class="cont blue " style="display: flex;" data-createdby="jasneet" data-designedby="jasmine" data-writtenby="sukh">
+        <div class="box yellow ">box1</div>
+    <div class="box">box2</div>
+<div class="box" id="un">box3</div>
+<div class="box">box4</div>
+<div class="box">box5</div>
+</div>
+<div id="inn"></div>
+<table>
+  <tr>
+  <th>Name</th>
+  <th>Class</th>
+  <th>ROll No.</th>
+  </tr>
+  <tr>
+    <td>Jasneet</td>
+    <td>b.voc sd</td>
+    <td>247624</td>
+  </tr>
+</table>
+<script>
+    console.log(document.querySelector(".box").style.backgroundColor="red");
+    let elements=document.querySelectorAll(".box");
+    for(let i=0;i<elements.length;i++){
+        elements[i].style.backgroundColor="pink";
+    }
+    // document.querySelectorAll(".box").forEach(element => {
+    //     element.style.backgroundColor="green";
+    // });
+    let t=document.querySelector(".box").classList;
+    t.toggle("yellow")
+    
+</script>
+</body>
+</html>

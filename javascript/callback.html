@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+// function loadScript(src,callback){
+//     let script=document.createElement("script");
+//     script.src=src;
+//     script.onload=()=>callback(script,callback2);
+//     document.head.append(script);
+// }
+// let callback2=()=>{
+//     console.log("second call back function called");
+// }
+// loadScript("loop.js",(script,callback2)=>{
+//     alert("script is loaded");
+//     alert("script.src")
+//     console.log("first callback function called");
+//     callback2();
+// });
+// //callback hell
+// call("first function called",()=>{
+//     call2("second function called",()=>{
+//         call3("Third function called");
+//     })
+// })
+// console.log("task1 executed");
+
+// setTimeout(()=>{
+//     console.log("stat1 executed using timeout");
+// },0);
+// setTimeout(()=>{
+//     console.log("stat2 executed using timeout");
+// },0)
+// console.log("task2 executed");
+function loadscript(src){
+let myPromise=new Promise((resolve,reject)=>{
+let script=document.createElement('script');
+script.src=src;
+document.head.append(script);
+script.onload=()=>{
+    return resolve("scr is loaded");
+}
+script.onerror=()=>{
+    return reject("Script failed to load");
+}
+})
+myPromise.then(()=>{
+    console.log("script loaded");
+})
+myPromise.catch(()=>{
+console.log("Script not loading...")
+})
+}
+// loadscript("conditional.js");
+// console.log("jasneet");
+
+</script>
+</body>
+</html>

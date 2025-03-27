@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function myfunc(){
+        document.getElementById("content").innerHTML="HEY there function worked"
+    }
+    var x=10;
+    console.log(x);
+</script>
+<body>
+    <p id="demo">Hey there how are you doing</p>
+    <script>
+        const ele=document.getElementById("demo");
+        ele.innerHTML="Content has been changed using constant";
+        // document.getElementById("demo").innerHTML="Content has been changed";
+    </script>
+    <p id="content">This is a paragraph tag</p>
+    <button type="button" onclick="myfunc()">CLICK ME</button>
+</body>
+</html>

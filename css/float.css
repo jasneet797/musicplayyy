@@ -1,0 +1,26 @@
+/* .box1{
+    height:100px;
+    width:100px;
+    background-color: darkgoldenrod;
+    float:right;
+}
+.box2{
+    height:100px;
+    width:100px;
+    background-color: cadetblue;
+    float:right;
+    clear:right;
+} */
+.box3{
+    border:2px solid brown;
+    /* padding:10px; */
+}
+.box3::after{
+    content:"";
+    clear:both;
+    display:table;
+}
+img{
+    height:200px;
+    float:left;
+}

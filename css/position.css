@@ -1,0 +1,22 @@
+.static{
+    border:2px solid black;
+    height:200px;
+    position:static;
+    overflow-y:scroll;
+}
+.relative{
+    border:2px solid pink;
+    position:relative;
+    width:100px;
+    height:100px;
+    left:200px;
+    bottom:50px;
+    top:350px;
+}
+.sticky{
+    position:sticky;
+    border:2px solid red;
+    height:100px;
+    width:100px;
+    bottom:0px;
+}

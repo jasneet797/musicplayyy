@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<h2>Displaying Properties</h2>
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  name: "Jasmine",
+  age: 30,
+  city: "New York"
+};
+let text="";
+for(let x in person){
+    text+=person[x]+"  ";
+    };
+    const myarray=Object.values(person);
+    document.getElementById("demo").innerHTML = myarray;
+</script>
+<p id="demo"></p>
+</body>
+</html>
+
+

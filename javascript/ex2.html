@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let runagain=true;
+        while(runagain){
+         let user=prompt("Enter S,W or G");
+         let  arr=["S","W","G"];
+         let random=Math.floor(Math.random()*3);
+         let cpu=arr[random];
+        if(user==arr){
+            alert("tie");
+        }
+        else if(user="S"&&cpu=="G" ||user=="S"&&cpu=="W" ||user=="W"&&cpu=="G"){
+                alert("You won");
+        }
+        else{
+            alert("You lose")
+        }
+        runagain=confirm("want to play again");
+    }
+
+    //     let x=confirm("are you sure");
+    //     if(x==true){
+    //     console.log("Enter S,W or G");
+    //     function rand_gen(a){
+    //         let random=Math.random();
+    //         console.log(random);
+    //     if (random<0.3){
+    //         return a="S";   
+    //     }
+    //     else if (random<0.6){
+    //         a="W";
+    //         return a;
+    //     }
+    //     else{
+    //         a="G";
+    //         return a;
+    //     }
+    // }
+    
+    //     let a=rand_gen();
+    //     let b=rand_gen();
+    //     if(a==b){
+    //         alert("tie")
+    //     }
+    //     else if(a=="S" && b=="G")(
+    //         alert("Loss")
+    //     )
+    //     else if(a=="S" && b=="W"){
+    //         alert("Win")
+    //     }
+    //     else if(a=="W" && b=="G"){
+    //         alert("Loss")               
+    //     }
+    //     console.log(a,b);
+    // }                                  
+    // else{
+    //     console.log("exit");
+    // }
+    </script>
+</body>
+</html>

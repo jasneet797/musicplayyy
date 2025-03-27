@@ -1,0 +1,29 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+.box1{
+    border:2px solid black;
+    width:200px;
+    height:200px;
+    /* height:33.3%; */
+    background-color: darkseagreen;
+    float:right;
+}
+.box2{
+    border:2px solid black;
+    width:200px;
+    height:200px;
+    /* height:33.3%; */
+    background-color: red;
+    float:right;
+}
+.box3{
+    border:2px solid black;
+    width:200px;
+    height:200px;
+    /* height:33.3%; */
+    background-color:yellow;
+    float:right;
+}

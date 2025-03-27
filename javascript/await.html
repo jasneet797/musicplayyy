@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function loadscript() {
+        // let script=document.createElement('script');
+        // script.src=src;
+        // document.head.append(script);
+        // await onload();
+        // onload=()=>{
+        //     return promise2=new Promise((resolve,reject)=>{
+        //         script.onload=()=>{
+        //             resolve("scr is loaded");
+        //         }
+        //         script.onerror=()=>{
+        //             reject("scr is not loaded");
+        //         }
+        //     })
+
+        // }
+        
+        function onload(src) {
+          let myPromise = new Promise((resolve, reject) => {
+            let script = document.createElement("script");
+            script.src = src;
+            document.head.append(script);
+            script.onload = () => {
+              return resolve("scr is loaded");
+            };
+            script.onerror = () => {
+              return reject("Script failed to load");
+            };
+          });
+        }
+    let data = await onload("loop.js");
+    console.log('Data received:', data);
+      }
+      loadscript();
+    </script>
+  </body>
+</html>

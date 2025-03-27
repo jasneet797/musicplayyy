@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+   <div class="form-all">
+    <header>
+       <div class="form-header">
+        <div class="cover-logo">
+            <img src="https://static.vecteezy.com/system/resources/previews/009/481/029/non_2x/geometric-icon-logo-geometric-abstract-element-free-vector.jpg" alt="company logo">
+        </div>
+        <h1 class="main-heading">Employee Satisfaction</h1>
+        <p class="sub-heading">Help us improve your experience with this company</p>
+       </div>
+       </header>
+       <div class="main">
+        <div class="form-line">
+            <label for="name" class=form-label>Name </label>
+            <div class="form-line-wide">
+                <div  class="form-line-column">
+                <div class="input-wrapper">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" stroke="#02bfc9" fill="none">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6H4z" />
+                </svg> -->
+                <input type="text" name="fname" class="form-input-name">
+
+            </div>
+                <p class="fname">First</p>
+            </div>
+            <div  class="form-line-column">
+                <input type="text" name="lname" class="form-input">
+                <p class="lname">Last</p>
+            </div>
+        </div>
+        </div>
+        <div class="form-line">
+            <label for="id" class="form-label">Employee ID</label>
+            <div class="input-wrapper">
+            <svg class="icon-SingleLine2" aria-hidden="true" height:24px width:24px stroke="#02bfc9" fill="#02bfc9">
+            <use xlink:href="#icon-SingleLine">
+                <symbol id="icon-SingleLine" >
+                    <title>Single-line</title>
+                    <path d="M29.95 23.15h-14.2c-0.55 0-1-0.45-1-1s0.45-1 1-1h14.2v-10.35h-14.2c-0.55 0-1-0.45-1-1s0.45-1 1-1h14.2c1.1 0 2 0.9 2 2v10.35c0 1.1-0.9 2-2 2z"></path>
+                    <path d="M7.55 23.15h-5.5c-1.1 0-2-0.9-2-2v-10.35c0-1.1 0.9-2 2-2h5.5c0.55 0 1 0.45 1 1s-0.45 1-1 1h-5.5v10.35h5.5c0.55 0 1 0.45 1 1s-0.45 1-1 1z"></path>
+                    <path d="M11.65 27.15c-0.55 0-1-0.45-1-1v-20.35c0-0.55 0.45-1 1-1s1 0.45 1 1v20.35c0 0.55-0.45 1-1 1z"></path>
+                 </symbol>
+            </use></svg>
+            <input type="text" class="form-input" name="id">
+        </div>
+        </div>
+        </div>
+        <div class="form-line">
+            <label for="#" class="form-label">How would you rate your supervisior's attitude towards you and rest of your team?</label>
+        </div>
+        <div class="form-line">
+            <label for="#" class="form-label">How would you rate our HR managers's attitudes
+                </label>
+        </div>
+        <div class="form-line">
+            <label for="satisfaction" class="form-label">How satisfied are you with your team</label>
+            <div class="dropdown">
+                <button id="dropbtn">Select one</button>
+                <div class="drop-content">
+                    <a href="#">Very statisfied</a>
+                    <a href="#">Not statisfied</a>
+                    <a href="#">statisfied</a>
+                </div>
+            </div>
+
+          </div>
+            <!-- <select name="#" class="dropdown" id="dropdown">
+            <option value="#"></option>
+            <option value="Very satisfied">Very satisfied</option>
+            <option value="somewhat satisfied">omewhat satisfied</option>
+            <option value="neutral">neutral</option>
+            <option value="somewhat dissatisfied">somewhat dissatisfied</option>
+            <option value="very dissatisfied">very dissatisfied</option>
+            <option value="N/A">N/A</option>
+            </select> -->
+        <div class="form-line">
+            <label for="check" class="form-label">Are your teammates helpful to each other?</label>
+            <div class="form-line-wide">
+            <div class="form-line-column">
+            <label for="yes" class="check-label">Yes,totally</label>
+            <input type="radio" class="radio" name="ques" id="yes">
+            </div>
+            <div class="form-line-column">
+            <label for="bit" class="check-label">A bit</label>
+            <input type="radio" id="bit" name="ques">
+            </div>
+            <div class="form-line-column">
+            <label for="No" class="check-label">No way</label>
+            <input type="radio" id="No" name="ques">
+            </div>
+        </div>
+        </div>
+        <div class="form-line">
+            <label for="review" class="form-label">Do you have anything you did like us to know</label>
+            <textarea name="review" id="review" rows="5" class="form-input textarea"></textarea>
+        </div>
+    <footer>
+        <button class="button">Submit</button>
+    </footer>
+        </div>   
+   </div> 
+</body>
+</html>

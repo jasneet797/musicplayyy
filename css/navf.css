@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#home,#News,#Contact{
+    padding:10px;
+    float:left;
+}
+#home:hover,#News:hover,#Contact:hover{
+    background-color: rgb(83, 81, 81);
+}
+.nav{
+    background-color: black;
+    color:white;
+    height:50px;
+    
+}

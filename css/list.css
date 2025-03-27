@@ -1,0 +1,28 @@
+*{
+    padding: 20;
+    margin: 0;
+}
+ul.a{
+    list-style-type:none;
+    list-style-image:url(home.svg);
+    background-color: brown;
+    padding:5px;
+}
+ul.a li{
+    background-color: beige;
+    padding:10px;
+    border:1px solid black;
+}
+ol.b{
+    list-style-type:lower-roman;
+}
+ol.c{
+    list-style-type:lower-alpha;
+}
+ol.d{
+    list-style-position:inside;
+}
+ol.c{
+    list-style-position:outside;
+}
+

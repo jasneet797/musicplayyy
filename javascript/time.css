@@ -1,0 +1,16 @@
+.cont{
+    background-color: rgb(155, 155, 43);
+    padding:12px;
+    margin:14px;
+    /* width:100%; */
+}
+.parent{
+    background-color:rgb(46, 132, 207);
+    padding:12px;
+    margin:14px;
+}
+.child{
+    background-color: cadetblue;
+    padding:12px;
+    margin:14px;
+}

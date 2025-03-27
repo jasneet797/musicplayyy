@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>Calculator</title>
+    <script src="calc.js"></script>
+</head>
+<body>
+    <div id="calc" class="border border-radius">
+        <input type="text" class=" border border-radius " id="calc-input">
+        <div id="content">
+        <button class="clac-btn border border-radius bg-red" onclick="Clear()" id="clear">C</button>
+        <button class="clac-btn border border-radius bg-red" onclick="Back()" id="backspace">&larr;</button>
+        <button class="clac-btn border border-radius" onclick="Solve('%')">%</button>
+        <button class="clac-btn border border-radius" onclick="Solve('/')">/</button>
+        <button class="clac-btn border border-radius" onclick="Solve('7')">7</button>
+        <button class="clac-btn border border-radius" onclick="Solve('8')">8</button>
+        <button class="clac-btn border border-radius" onclick="Solve('9')">9</button>
+        <button class="clac-btn border border-radius" onclick="Solve('*')">x</button>
+        <button class="clac-btn border border-radius" onclick="Solve('4')">4</button>
+        <button class="clac-btn border border-radius" onclick="Solve('5')">5</button>
+        <button class="clac-btn border border-radius" onclick="Solve('6')">6</button>
+        <button class="clac-btn border border-radius" onclick="Solve('-')">-</button>
+        <button class="clac-btn border border-radius" onclick="Solve('1')">1</button>
+        <button class="clac-btn border border-radius" onclick="Solve('2')">2</button>
+        <button class="clac-btn border border-radius" onclick="Solve('3')">3</button>
+        <button class="clac-btn border border-radius" onclick="Solve('+')">+</button>
+        <button class="clac-btn border border-radius" onclick="Solve('00')">00</button>
+        <button class="clac-btn border border-radius" onclick="Solve('0')">0</button>
+        <button class="clac-btn border border-radius" onclick="Solve('.')">.</button>
+        <button class="clac-btn border border-radius" onclick="Result('=')">=</button>
+        </div>
+    </div>
+</body>
+</html>

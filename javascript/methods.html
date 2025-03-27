@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS methods</title>
+</head>
+<body>
+    <script>
+        const customer={
+            name:"jasmine",
+            id:432,
+            address:"khanna",
+            greet:function(){
+               alert(`hey ${customer.name} how are you doing`);
+            }
+        };
+        customer.bill=function(){
+            console.log("Your bill is $1000");
+        }
+        document.getElementById("demo").innerHTML=customer.name ;
+    </script>
+    <button onclick="customer.bill()">click me</button><br>
+    <button onclick="customer.greet()">click me</button>
+    <p id="demo">object:</p>
+</body>
+</html>

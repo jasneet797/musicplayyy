@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="all">
+      <div class="outer">
+        <div class="first">
+          <div class="img">
+            <img
+              id="albumArt"
+              src="assets/sifar-safar-karan-aujla.webp"
+              alt="Sifar Safar Album Art"
+            />
+          </div>
+        </div>
+
+        <div class="section"></div>
+
+        <div id="songName" class="name">Sifar Safar</div>
+        <div id="singerName" class="singer">Karan Aujla</div>
+
+        <div class="seco">
+          <div class="timmer">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="song_time">
+            <div id="currentTime" class="current-time">0:00</div>
+            <!-- Current time display -->
+            <div id="songDuration" class="duration">3:00</div>
+            <!-- Total duration display -->
+          </div>
+
+          <audio id="audioPlayer">
+            <source
+              id="audioSource"
+              src="https://s320.djpunjab.is/data/48/56396/305777/Sifar%20Safar%20-%20Karan%20Aujla.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+
+          <!-- Controls for music player -->
+          <div class="controls">
+            <button class="prev">&#9664;&#9664;</button>
+            <!-- Previous button -->
+            <button class="play">&#9654;</button>
+            <!-- Play button -->
+            <button class="next">&#9654;&#9654;</button>
+            <!-- Next button -->
+            <button style="color: white; background: white" class="shuffle">
+              &#x1f500;
+            </button>
+            <!-- Shuffle button -->
+            <button class="like" id="likeButton">&#9829;</button>
+            <!-- Like button -->
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <h3>Favorite Songs</h3>
+        <ul id="favoriteSongsList">No Song Favorite Now</ul>
+        <!-- List to display favorite songs -->
+      </div>
+    </div>
+
+    <script>
+      const audioPlayer = document.getElementById("audioPlayer");
+      const playButton = document.querySelector(".play");
+      const prevButton = document.querySelector(".prev");
+      const nextButton = document.querySelector(".next");
+      const shuffleButton = document.querySelector(".shuffle");
+      const likeButton = document.getElementById("likeButton");
+      const progressBar = document.querySelector(".progress-bar");
+      const songNameElement = document.getElementById("songName");
+      const singerNameElement = document.getElementById("singerName");
+      const albumArtElement = document.getElementById("albumArt");
+      const audioSource = document.getElementById("audioSource");
+      const currentTimeElement = document.getElementById("currentTime"); // Current time display
+      const songDurationElement = document.getElementById("songDuration"); // Total duration display
+      const favoriteSongsList = document.getElementById("favoriteSongsList"); // List element for favorites
+      let isPlaying = false;
+      let favoriteSongs = []; // Array to store favorite songs
+
+      // Array of songs with details
+      const songs = [
+        {
+          name: "Sifar Safar",
+          singer: "Karan Aujla",
+          src: "https://s320.djpunjab.is/data/48/56396/305777/Sifar%20Safar%20-%20Karan%20Aujla.mp3",
+          img: "assets/sifar-safar-karan-aujla.webp",
+        },
+        {
+          name: "Alvidaa",
+          singer: "Raj Ranjodh,Tigerstyle",
+          src: "https://s320.djpunjab.is/data/48/38764/281785/Alvidaa%20-%20Raj%20Ranjodh.mp3",
+          img: "assets/alvidaa-raj-ranjodh.webp",
+        },
+        {
+          name: "Lehar",
+          singer: "Amrit Maan",
+          src: "https://p320.djpunjab.is/data/48/55049/303800/Lehar%20-%20Amrit%20Maan.mp3",
+          img: "assets/lehar.webp",
+        },
+        {
+          name: "315",
+          singer: "AP Dhillon, Jazzy B",
+          src: "https://p320.djpunjab.is/data/48/56130/305344/315%20-%20AP%20Dhillon.mp3",
+          img: "assets/315.webp",
+        },
+        {
+            name:"Chitta Kurta",
+            singer:"Karan Aujla",
+            src:"https://s320.djpunjab.is/data/48/47081/294165/Chitta%20Kurta%20-%20Karan%20Aujla.mp3",
+            img: "assets/ck.webp    ",
+        }
+      ];
+
+      let currentSongIndex = 0; // Song that plays after Sifar Safar
+
+      // Function to load the current song
+      function loadSong(song) {
+        songNameElement.innerHTML = song.name;
+        singerNameElement.innerHTML = song.singer;
+        albumArtElement.src = song.img;
+        audioSource.src = song.src;
+        audioPlayer.load(); // Reload the audio with new source
+
+        // Update song duration display
+        audioPlayer.onloadedmetadata = () => {
+          const duration = formatTime(audioPlayer.duration);
+          songDurationElement.innerHTML = duration; // Update duration display
+        };
+
+        if (isPlaying) {
+          audioPlayer.play(); // Automatically play if it was playing
+        }
+
+        // Update like button based on if song is favorited
+        updateLikeButton(song);
+      }
+
+      // Function to format time in mm:ss
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? "0" : ""}${secs}`; // Add leading zero to seconds if needed
+      }
+
+      // Toggle play/pause functionality
+      playButton.addEventListener("click", () => {
+        if (isPlaying) {
+          audioPlayer.pause();
+          playButton.innerHTML = "&#9654;"; // Change to play icon
+        } else {
+          audioPlayer.play();
+          playButton.innerHTML = "&#10074;&#10074;"; // Change to pause icon
+        }
+        isPlaying = !isPlaying;
+      });
+
+      // Update the progress bar and color as the audio plays
+      audioPlayer.addEventListener("timeupdate", () => {
+        const progressPercent =
+          (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+
+        // Update current time display
+        currentTimeElement.innerHTML = formatTime(audioPlayer.currentTime);
+
+        if (progressPercent <= 33) {
+          progressBar.style.backgroundColor = "#ff8c00"; // Orange
+        } else if (progressPercent <= 66) {
+          progressBar.style.backgroundColor = "#ff4500"; // Red-orange
+        } else {
+          progressBar.style.backgroundColor = "#32cd32"; // Lime green
+        }
+      });
+
+      // Logic for Next button to load next song
+      nextButton.addEventListener("click", () => {
+        currentSongIndex = (currentSongIndex + 1) % songs.length; // Cycle through songs
+        loadSong(songs[currentSongIndex]);
+      });
+
+      // Logic for Previous button to load previous song
+      prevButton.addEventListener("click", () => {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length; // Cycle through songs backward
+        loadSong(songs[currentSongIndex]);
+      });
+
+      // Function to shuffle songs
+      function shuffleSongs() {
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * songs.length);
+        } while (randomIndex === currentSongIndex); // Ensure a different song is played
+        currentSongIndex = randomIndex;
+        loadSong(songs[currentSongIndex]);
+      }
+
+      // Event listener for the shuffle button
+      shuffleButton.addEventListener("click", () => {
+        shuffleSongs();
+      });
+
+      // Function to add song to favorite
+      likeButton.addEventListener("click", () => {
+        const currentSong = songs[currentSongIndex];
+        const isFavorite = favoriteSongs.some(
+          (song) => song.name === currentSong.name
+        );
+
+        if (!isFavorite) {
+          favoriteSongs.push(currentSong);
+        } else {
+          favoriteSongs = favoriteSongs.filter(
+            (song) => song.name !== currentSong.name
+          ); // Remove if already liked
+        }
+
+        updateFavoriteSongsList();
+        updateLikeButton(currentSong);
+      });
+
+      // Function to update the favorite songs list display
+      function updateFavoriteSongsList() {
+        favoriteSongsList.innerHTML = ""; // Clear the list first
+        favoriteSongs.forEach((song) => {
+          const li = document.createElement("li");
+          li.textContent = `${song.name} - ${song.singer}`;
+          favoriteSongsList.appendChild(li);
+        });
+      }
+
+      // Function to update the like button state (filled or empty heart)
+      function updateLikeButton(song) {
+        const isFavorite = favoriteSongs.some(
+          (favSong) => favSong.name === song.name
+        );
+        likeButton.style.color = isFavorite ? "red" : "black"; // Red if liked, black otherwise
+      }
+    </script>
+  </body>
+</html>

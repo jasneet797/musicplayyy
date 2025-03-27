@@ -1,0 +1,177 @@
+
+      /* General reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styling */
+      body {
+        background: linear-gradient(135deg, #e09f9f, #f3e6e6);
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Outer container for the player */
+      .outer {
+        background: rgba(1, 1, 1, 0.7);
+        border-radius: 20px;
+        padding: 50px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Center the album image */
+      .img img {
+        height: 200px;
+        width: 200px;
+        border-radius: 15px;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Song name */
+      .name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #fdfdfd;
+        text-align: center;
+      }
+
+      /* Singer name */
+      .singer {
+        font-size: 1.2rem;
+        color: #d3d3d3;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .song_time{
+        display: flex;
+        justify-content: space-between;
+        color: #ff8c00;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      /* Section divider */
+      .section {
+        background: #777;
+        width: 80%;
+        height: 2px;
+        margin: 20px auto;
+      }
+
+      /* Timer and control section */
+      .seco {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .timmer {
+        width: 100%;
+        background: #333;
+        height: 5px;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      /* Progress bar inside the timer */
+      .progress-bar {
+        
+        /* position: absolute; */
+        /* left: 0;
+        top: 0; */
+        height: 100%;
+        width: 0%; /* Initially at 0%, will grow as the song plays */
+        background: #ff8c00;
+        border-radius: 50px;
+        transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      }
+
+      /* Controls section */
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+        gap: 9px;
+      }
+
+      /* Buttons for previous, play, and next */
+      button {
+        background: #ff8c00;
+        border: none;
+        color: white;
+        padding: 15px;
+        font-size: 1rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background: #ffa54d;
+        transform: scale(1.1);
+      }
+      .all{
+        display: flex;
+        justify-content: space-between  ;
+        width: 70%;
+        height: 100vh;
+      }
+      .list{
+        background: linear-gradient(135deg, #eb9e9e, #f1dcdc);
+        border-radius: 20px;
+        padding: 50px;
+        width: 450px;
+        align-items: center;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+      }
+      .list h3{
+        color:blueviolet;
+        margin: 10px;
+        font-style: italic;
+        text-decoration: underline blueviolet ;
+      }
+      .list ul{
+        color: #371bb4;
+        font-weight: bold;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 500px) {
+        .outer {
+          width: 90%;
+        }
+        .name {
+          font-size: 1.5rem;
+        }
+        .singer {
+          font-size: 1rem;
+        }
+        .img img {
+          height: 150px;
+          width: 150px;
+        }
+        button {
+          padding: 10px;
+          font-size: 0.9rem;
+        }
+      }
+    
